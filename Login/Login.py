@@ -1,23 +1,6 @@
 import json
-import demjson
 import os
 
-
-## Converting Json data to Python 
-#jsonData = {"name": "FlameWright", "password": "password"}
-#jsonToPython = load(jsonData)
-
-#print(jsonToPython)
-#print(jsonToPython['name'])
-
-## Converting Python dictionary to Json data
-
-#pythonDictionary = {"name": "Nidan", "password": "sino"}
-#dictionaryToJson = dumps(pythonDictionary)
-
-
-
-#print(pythonDictionary)
 
 class Login:
 	def __init__(self):
@@ -26,59 +9,79 @@ class Login:
 		self.FirstName = ''
 		self.LastName = ''
 	
+	
 	def getUserName(self):
 		return self.UserName
 		
 	def setUserName(self, name):
 		self.UserName = name
+	
+	
+	def getPassword(self):
+		return self.Password
+		
+	def setPassword(self, password):
+		self.Password = password
+	
+	
+	def getFirstName(self):
+		return self.FirstName
+		
+	def setFirstName(self, name):
+		self.FirstName = name
+	
+	
+	def getLastName(self):
+		return self.LastName
+		
+	def setLastName(self, name):
+		self.LastName = name
+		
 		
 	def writeUserFileName(self):
-		filename = self.UserName + '.json'
+		filename = '/home/iceman/_/code/chay-family-footsteps/Data/User/' + self.UserName + '.json'
 		return filename
+	
+	def __str__(self):
+		return '''
+Username: {}
+Password: {}
+First Name: {}
+Last Name: {}
+''' .format(self.UserName, self.Password, self.FirstName, self.LastName)#Login().getUserName(), Login().getPassword(), Login().getFirstName(), Login().getLastName())
 		
 def jsonDefault(object):
 	return object.__dict__
 
 
-FlameWright = Login()
-FlameWright.setUserName("FlameWright")
-file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
-#file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
+# Create empty shell for new user
+user = Login()
+#change Username to 'Chris'
+user.setUserName('Chris')
+print(user)
 
-print(FlameWright.writeUserFileName())
-print(FlameWright.getUserName())
+#Converts User_data to Dictionary form
+user_data = jsonDefault(user)
+print(user_data)
 
-
-#print(abder, default=jsonDefault)
-data = json.dumps(FlameWright, default=jsonDefault)
-
-with open("FlameWright.json", "w") as file:
-   json.dump(data, file, indent=4)
-
-#print(data)
-#data = demjson.encode(FlameWright)
-#print(data)
+#Generates a file name based on the user's Username
+user_data_filename = user.writeUserFileName()
 
 
-#with open("FlameWright.json") as data:
-#    result = data.read()
+with open(user_data_filename, "w") as file:
+   json.dump(user_data, file, indent=4)
 
-#print (type(result))
-#print (result.keys())
-#print (result)
+with open(user_data_filename, "r") as file:  
+	user_data = json.load(file)
 
-#json.loads('FlameWright.json')
-#profiles = pickle.load(open('profiles.pickle', 'rb'))
+print(user_data)
+print(user_data['UserName'])
+user.setPassword('password')
+user_data = jsonDefault(user)
+print(user_data)
 
-
-
-
-
-
-
-
-
-
+with open(user_data_filename, "w") as file:
+   json.dump(user_data, file, indent=4)
 
 
 
