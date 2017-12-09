@@ -1,8 +1,5 @@
 import json
-<<<<<<< HEAD
 import demjson
-=======
->>>>>>> 278b50ceee3c9f39213371584ede5520d244c51b
 import os
 
 
@@ -45,11 +42,8 @@ def jsonDefault(object):
 
 FlameWright = Login()
 FlameWright.setUserName("FlameWright")
-<<<<<<< HEAD
 file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
-=======
 #file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
->>>>>>> 278b50ceee3c9f39213371584ede5520d244c51b
 
 print(FlameWright.writeUserFileName())
 print(FlameWright.getUserName())
@@ -61,13 +55,9 @@ data = json.dumps(FlameWright, default=jsonDefault)
 with open("FlameWright.json", "w") as file:
    json.dump(data, file, indent=4)
 
-<<<<<<< HEAD
 #print(data)
 #data = demjson.encode(FlameWright)
 #print(data)
-=======
-
->>>>>>> 278b50ceee3c9f39213371584ede5520d244c51b
 
 
 #with open("FlameWright.json") as data:

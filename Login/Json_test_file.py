@@ -1,6 +1,15 @@
-import demjson
+import json
 
-data = [ { 'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5 } ]
+student = {"101":{"class":'V', "Name":'Rohit',  "Roll_no":7},
+           "102":{"class":'V', "Name":'David',  "Roll_no":8},
+           "103":{"class":'V', "Name":'Samiya', "Roll_no":12}}
 
-json = demjson.encode(data)
-print json
+json_data_file = json.dumps(student, indent=4)
+
+with open("FlameWright.json", "w") as file:
+   json.dump(json_data_file, file, indent=4)
+
+with open("FlameWright.json", "r") as file:  
+	student_info = json.load(file)
+	
+print(student_info)
