@@ -87,13 +87,24 @@ class Player():
 		self._AC = AC
 
 	# Other methods
-	def GetRandomPlayer( self, Name, Gender ):
+	def GetNewPlayer( self, Name, Gender ):
 		self.SetName( Name )
 		self.SetAge( 18 )
 		self.SetGender( Gender )
 		self.SetStrength( self.GenerateAttribute() )
 		self.SetAgility( self.GenerateAttribute() )
 		self.SetConstitution( self.GenerateAttribute() )
+		
+		# attribute mod for gender
+		if ( self.GetGender() == 'Male' and self.GetStrength() < 10 ):
+			print( "Strength Before:", self.GetStrength() )
+			self.SetStrength( self.GetStrength() + 1 )
+			print( "Strength After:", self.GetStrength() )
+		elif ( self.GetGender() == 'Female' and self.GetAgility() < 10 ):
+			print( "Agility Before:", self.GetAgility() )
+			self.SetAgility( self.GetAgility() + 1 )
+			print( "Agility After:", self.GetAgility() )
+			
 		self.SetXP( 1 )
 		self.SetLevel( 1 )
 		self.SetHP( self.GenerateHP() )
@@ -106,11 +117,15 @@ class Player():
 	def GenerateHP( self ):
 		return random.randint( 1, 100 )
 	
-
-p2 = Player().GetRandomPlayer( 'Jack', 'Male' )
-print ( "Name", p2.GetName() )
-print ( "Aage: ", p2.GetAge() )
-print ( "Str: ", p2.GetStrength() )
-print ( "Agil: ",p2.GetAgility() )
-print ( "Const: ",p2.GetConstitution() )
-print ( "HP: ",p2.GetHP() )
+	# debugging
+	def ShowPlayerInfo( self ):
+		print ( "Name: ", self.GetName() )
+		print ( "Age: ", self.GetAge() )
+		print ( "Gender: ", self.GetGender() )
+		print ( "Strength: ", self.GetStrength() )
+		print ( "Agility: ", self.GetAgility() )
+		print ( "Constitution: ", self.GetConstitution() )
+		print ( "XP: ", self.GetXP() )
+		print ( "Level: ", self.GetLevel() )
+		print ( "HP: ", self.GetHP() )
+		print ( "AC: ", self.GetAC() )
