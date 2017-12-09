@@ -91,12 +91,12 @@ class Player():
 		self.SetName( Name )
 		self.SetAge( 18 )
 		self.SetGender( Gender )
-#		self.SetStrength( self.GenerateAttribute() )
-#		self.SetAgility( self.GenerateAttribute() )
-#		self.SetConstitution( self.GenerateAttribute() )
+		self.SetStrength( self.GenerateAttribute() )
+		self.SetAgility( self.GenerateAttribute() )
+		self.SetConstitution( self.GenerateAttribute() )
 		self.SetXP( 1 )
 		self.SetLevel( 1 )
-#		self.SetHP( self.GenerateHP() )
+		self.SetHP( self.GenerateHP() )
 		self.SetAC( 1 )
 		return self
 		
@@ -108,5 +108,9 @@ class Player():
 	
 
 p2 = Player().GetRandomPlayer( 'Jack', 'Male' )
-print ( p2.GetAge() )
-print ( p2.GetName() )
+print ( "Name", p2.GetName() )
+print ( "Aage: ", p2.GetAge() )
+print ( "Str: ", p2.GetStrength() )
+print ( "Agil: ",p2.GetAgility() )
+print ( "Const: ",p2.GetConstitution() )
+print ( "HP: ",p2.GetHP() )
