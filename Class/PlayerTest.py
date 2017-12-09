@@ -1,9 +1,9 @@
 import Player
 
-p = Player.Player().GetNewPlayer( 'Jack', 'Female' )
+p = Player.Player().GetNewPlayer( '', 'FemaleFemale' )
 p.ShowPlayerInfo()
 
 print( "\n" )
 
-p1 = Player.Player().GetNewPlayer( 'Jane', 'Male' )
+p1 = Player.Player().GetNewPlayer( '', 'MaleMale' )
 p1.ShowPlayerInfo()
