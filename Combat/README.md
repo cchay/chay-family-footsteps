@@ -1,6 +1,4 @@
 # chay-family-footsteps
-Futuristic post-apocaliptic RPG text game.
-
 Combat System:
 
 AC: 1-100
