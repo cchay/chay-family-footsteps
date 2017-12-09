@@ -1,4 +1,4 @@
-from json import dumps, load
+import json
 import os
 
 
@@ -41,21 +41,27 @@ def jsonDefault(object):
 
 FlameWright = Login()
 FlameWright.setUserName("FlameWright")
-file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
+#file = open(str(FlameWright.writeUserFileName()), 'w+')#FlameWright.writeUserFileName(), 'w+')
 
 print(FlameWright.writeUserFileName())
 print(FlameWright.getUserName())
-    
-open("FlameWright.json", "wb") as data:
-   dumps({'Hank': 'BPS'}, data, indent=4)
 
 
-with open("FlameWright.json") as data:
-    result = data.read()
+#print(abder, default=jsonDefault)
+data = json.dumps(FlameWright, default=jsonDefault)
 
-print (type(result))
-print (result.keys())
-print (result)
+with open("FlameWright.json", "w") as file:
+   json.dump(data, file, indent=4)
+
+
+
+
+#with open("FlameWright.json") as data:
+#    result = data.read()
+
+#print (type(result))
+#print (result.keys())
+#print (result)
 
 #json.loads('FlameWright.json')
 #profiles = pickle.load(open('profiles.pickle', 'rb'))
