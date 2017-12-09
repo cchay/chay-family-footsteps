@@ -32,7 +32,7 @@ Armor
 Object:
 	ID
 	Name
-	Type: weapon, armor, cell-regenerator
+	Type: weapon, armor, egenerator
 	Description
 	Weight
 	Price
