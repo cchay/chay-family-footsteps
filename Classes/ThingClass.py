@@ -1,55 +1,55 @@
 class Thing(  ):
    def __init__( self ):
-      self._ID = ''
-      self._Name = ''
-      self._Type = ''
-      self._Description = ''
-      self._Weight = 0
-      self._Price = 0
+      self.__ID = ''
+      self.__Name = ''
+      self.__Type = ''
+      self.__Description = ''
+      self.__Weight = 0
+      self.__Price = 0
 
 
 
 
    def GetID( self ):
-      return self._ID
+      return self.__ID
 
    def SetID( self, ID ):
-      self._ID = ID
+      self.__ID = ID
 
 
    def GetName( self ):
-      return self._Name
+      return self.__Name
 
    def SetName( self, Name ):
-      self._Name = Name
+      self.__Name = Name
 
 
    def GetType( self ):
-      return self._Type
+      return self.__Type
 
    def SetType( self, Type ):
-      self._Type = Type
+      self.__Type = Type
 
 
    def GetDescription( self ):
-      return self._Description
+      return self.__Description
 
    def SetDescription( self, Description ):
-      self._Description = Description
+      self.__Description = Description
 
 
    def GetWeight( self ):
-      return self._Weight
+      return self.__Weight
 
    def SetWeight( self, Weight ):
-      self.Weight = Weight
+      self.__Weight = Weight
 
 
    def GetPrice( self ):
-      return self._Price
+      return self.__Price
 
    def SetPrice( self, Price ):
-      self._Price = Price
+      self.__Price = Price
 
 
 
@@ -63,27 +63,27 @@ class Weapon( Thing ):
       self.SetPrice( Price )
       self.SetSpeed = 0
       self.SetDamage = 0
-      self._HitRollMod = 0
+      self.__HitRollMod = 0
 
    def GetSpeed( self ):
-      return self._Speed
+      return self.__Speed
 
    def SetSpeed( self, Speed ):
-      self._Speed = Speed
+      self.__Speed = Speed
 
 
    def GetDamage( self ):
-      return self._Damage
+      return self.__Damage
 
    def SetDamage( self, Damage ):
        self._Damage = Damage
 
 
    def GetHitRollMod( self ):
-       return self._HitRollMod
+       return self.__HitRollMod
 
    def SetHitRollMod( self, HitRollMod ):
-      self._HitRollMod = HitRollMod
+      self.__HitRollMod = HitRollMod
 
 
 
@@ -96,13 +96,13 @@ class Armour( Thing ):
       self.SetType( Type )
       self.SetDescription( Description )
       self.SetPrice( Price )
-      self._AC = 0
+      self.__AC = 0
 
    def GetAC( self ):
-      return self._AC
+      return self.__AC
 
    def SetAC( self, AC ):
-      self._AC = AC
+      self.__AC = AC
 
 
 
@@ -116,11 +116,11 @@ class Regenerator( Thing ):
       self.SetType( Type )
       self.SetDescription( Description )
       self.SetPrice( Price )
-      self._HPRestore = 0
+      self.__HPRestore = 0
 
    def GetHPRestore( self ):
-      return self._HPRestore
+      return self.__HPRestore
 
    def SetHPRestore( self, HPRestore ):
-      self._HPRestore = HPRestore
+      self.__HPRestore = HPRestore
 
