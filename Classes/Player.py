@@ -165,16 +165,16 @@ class Player():
 			self.SetAgility( self.GetAgility() + 1 )
 			#print( "Agility After:", self.GetAgility() )
 			
-		self.SetXP( 1 )
+		self.SetXP( 0 )
 		self.SetLevel( 1 )
-		self.SetHP( self.GenerateHP() )
-		self.SetCurrentHP( self.GetHP() )
 		self.SetDamageMod( self.GetAttributeMod( self.GetStrength() ) )
 		self.SetStrHitMod( self.GetAttributeMod( self.GetStrength() ) )
 		self.SetAgilityHitMod( self.GetAttributeMod( self.GetAgility() ) )
 		self.SetACMod( self.GetAttributeMod( self.GetAgility() ) )
 		self.SetInitiativeMod( self.GetAttributeMod( self.GetAgility() ) )
 		self.SetHPMod( self.GetAttributeMod( self.GetConstitution() ) )
+		self.SetHP( self.GenerateHP() )
+		self.SetCurrentHP( self.GetHP() )
 		self.SetAC( 1 )
 		return self
 		
@@ -182,7 +182,8 @@ class Player():
 		return random.randint( 1, 10 )
 	
 	def GenerateHP( self ):
-		return random.randint( 1, 100 )
+		x = random.randint( 1, 100 ) + self.GetHPMod()
+		return x if ( x > 0 ) else 1
 	
 	def GetAttributeMod( self, Attribute ):
 		if ( Attribute == 10 ):
