@@ -12,12 +12,12 @@ AC: 1-100
 100= Highest value in the system
 
 HitRoll modifiers:
-Weapon's HitRoll modifier
-Player's Strength/Agility combination
+	Weapon's HitRoll modifier
+	Player's Strength/Agility combination
 
 AC modifiers:
-Armor's AC modifier
-Agility/Constitution
+	Armor's AC modifier
+	Agility/Constitution
 
 Todo: Initiative (who attacks first)
 Agility
@@ -25,9 +25,11 @@ Weapon Speed
 Armor Encumbrence
 
 Damage modifier:
-Strength
-Weapon
-Armor
+	Strength
+	Weapon
+	Armor
+
+
 
 Object:
 	ID
