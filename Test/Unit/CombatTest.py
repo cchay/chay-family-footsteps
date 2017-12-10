@@ -13,11 +13,13 @@ sys.path.append( os.path.join( os.path.dirname( __file__ ), RelativePath, 'Engin
 import Player
 import Combat
 
-p1 = Player.Player().GetNewPlayer( 'Jane', 'Female' )
-#p1.ShowPlayerInfo()
+p1 = Player.Player().GetNewPlayer( 'Donald Trump', 'Male' )
+p1.ShowPlayerInfo()
+print("\n")
 
-p2 = Player.Player().GetNewPlayer( 'Jack', 'Male' )
-#p2.ShowPlayerInfo()
+p2 = Player.Player().GetNewPlayer( 'Kim Jung Un', 'Male' )
+p2.ShowPlayerInfo()
+print("\n")
 
 print( "Fighters: ", p1.GetName(), "vs", p2.GetName() )
 Combat.ResolveCombat( p1, p2 )
