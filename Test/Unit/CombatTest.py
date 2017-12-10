@@ -1,7 +1,19 @@
 import sys, os
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Classes'))
+## Import for Windows
+if os.name == 'nt':
+	sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Classes'))
+	
+	sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Engine'))
+## Import for Linux
+else:
+	sys.path.append(os.path.join(os.path.dirname(__file__), '../..', 'Classes'))
+	sys.path.append(os.path.join(os.path.dirname(__file__), '../..', 'Engine'))
+
+
 import Player
+import Combat
+
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Engine'))
 import Combat
