@@ -123,3 +123,4 @@ class Regenerator( Thing ):
 
    def SetHPRestore( self, HPRestore ):
       self._HPRestore = HPRestore
+
