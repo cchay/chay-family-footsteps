@@ -1,44 +1,52 @@
 class Place:
 	def __init__(self):
-		self.ID = 0
-		self.Type = ''#Buildings are only available at places, Places is a map location 
-		self.Description = ''
-		self.Name = ''
-		self.CanHaveBuildings = False
+		self.__ID = 0
+		self.__Type = ''#Buildings are only available at places, Places is a map location 
+		self.__Description = ''
+		self.__Name = ''
+		self.__CanHaveBuildings = False
+		self.__CanGoTo = ''
 	
 	def GetID(self):
-		return self.ID
+		return self.__ID
 	
 	def SetID(self, Id):
-		self.ID = Id
+		self.__ID = Id
 	
 	
 	def GetType(self):
-		return self.Type
+		return self.__Type
 	
 	def GetType(self, Type):
-		self.Type = Type
+		self.__Type = Type
 		
 	
 	def GetDescription(self):
-		return self.Description
+		return self.__Description
 	
 	def GetDescription(self, Id):
-		self.ID = Id
+		self.__ID = Id
 	
 	
 	def GetName(self):
-		return self.Name
+		return self.__Name
 	
 	def GetName(self, name):
-		self.Name = name
+		self.__Name = name
 	
 	
 	def GetCanHaveBuildings(self):
-		return self.ID
+		return self.__ID
 	
 	def GetCanHaveBuildings(self, canhavebuildings):
-		self.GetCanHaveBuildings = canhavebuildings
+		self.__GetCanHaveBuildings = canhavebuildings
+	
+	
+	def GetCanGoTo(self):
+		return self.__CanGoTo
+
+	def SetCanGoTo(self, cangoto):
+		self.__CanGoTo = cangoto
 
 
 
@@ -46,13 +54,22 @@ class Place:
 
 class Town(Place):
 	def __init__(self):
-		self.CanGoTo = ''
+#		self.__Type = 'Place'
+#		self.__CanHaveBuildings = True
+		self.__Inventory = []
+		
 	
-	def GetCanGoTo(self):
-		return self.CanGoTo
+	def Shop(self):
+		print('Welcome to the General Store!')
+		
+		
+	
+	def GetInventory(self):
+		return self.__Inventory
+		#Todo, Need the Weapon, Armour and Thing json data files
+	
+		
 
-	def SetCanGoTo(self, cangoto):
-		self.CanGoTo = cangoto
 
 
 

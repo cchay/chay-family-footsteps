@@ -4,42 +4,42 @@ import os
 
 class User:
 	def __init__(self):
-		self.Username = ''
-		self.Password = ''
-		self.FirstName = ''
-		self.LastName = ''
+		self.__Username = ''
+		self.__Password = ''
+		self.__FirstName = ''
+		self.__LastName = ''
 	
 	
 	def getUsername(self):
-		return self.Username
+		return self.__Username
 		
 	def setUsername(self, name):
-		self.Username = name
+		self.__Username = name
 	
 	
 	def getPassword(self):
-		return self.Password
+		return self.__Password
 		
 	def setPassword(self, password):
-		self.Password = password
+		self.__Password = password
 	
 	
 	def getFirstName(self):
-		return self.FirstName
+		return self.__FirstName
 		
 	def setFirstName(self, name):
-		self.FirstName = name
+		self.__FirstName = name
 	
 	
 	def getLastName(self):
-		return self.LastName
+		return self.__LastName
 		
 	def setLastName(self, name):
-		self.LastName = name
+		self.__LastName = name
 		
 		
 	def writeUserFileName(self):
-		filename = self.Username + '.json'
+		filename = self.__Username + '.json'
 		return filename
 	
 	def __str__(self):
@@ -48,7 +48,7 @@ Username: {}
 Password: {}
 First Name: {}
 Last Name: {}
-''' .format(self.Username, self.Password, self.FirstName, self.LastName)#Login().getUsername(), Login().getPassword(), Login().getFirstName(), Login().getLastName())
+''' .format(self.__Username, self.__Password, self.__FirstName, self.__LastName)#Login().getUsername(), Login().getPassword(), Login().getFirstName(), Login().getLastName())
 		
 	def jsonDefault(self, object):
 		return object.__dict__

@@ -56,9 +56,9 @@ def Register():
 			print('Username already exsists!')
 			return Register()
 			
-		elif '' in usershell.getUsername() or '' in usershell.getPassword(): 
-			print('There cannot be any spaces in the Username or Password!')
-			return Register()	
+		elif not usershell.getUsername() or not usershell.getPassword():
+				print('There cannot be any spaces in the Username or Password!')
+				return Register()	
 			
 		else:
 			print('Welcome, %s!' % usershell.getUsername())
