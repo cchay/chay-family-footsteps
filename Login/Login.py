@@ -3,14 +3,11 @@ import json, sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Classes'))
 import User
 
-with open ('Me.json', 'r') as userfile:
-	user_data = json.load(userfile)
-
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Data/User'))
 
 
 
-with open ('Chris.json', 'r') as userfile:
+with open ('Moe.json', 'r') as userfile:
 	user_data = json.load(userfile)
 
 usershell = User.User()
