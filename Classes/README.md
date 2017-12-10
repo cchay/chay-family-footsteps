@@ -1,0 +1,1 @@
+This folder has to be named "Classes" and not "Class".

@@ -1,0 +1,2 @@
+def subp():
+	print("player")
