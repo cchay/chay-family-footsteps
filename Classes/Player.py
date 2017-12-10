@@ -175,7 +175,7 @@ class Player():
 		self.SetHPMod( self.GetAttributeMod( self.GetConstitution() ) )
 		self.SetHP( self.GenerateHP() )
 		self.SetCurrentHP( self.GetHP() )
-		self.SetAC( 1 )
+		self.SetAC( self.GenerateAC() )
 		return self
 		
 	def GenerateAttribute( self ):
@@ -183,6 +183,11 @@ class Player():
 	
 	def GenerateHP( self ):
 		x = random.randint( 1, 100 ) + self.GetHPMod()
+		return x if ( x > 0 ) else 1
+	
+	def GenerateAC( self ):
+		# Add armor bonus
+		x = self.GetACMod()
 		return x if ( x > 0 ) else 1
 	
 	def GetAttributeMod( self, Attribute ):
