@@ -4,146 +4,150 @@ class Player():
 	# Constructor
 	def __init__( self ):
 		# Private member vars; do not access directly; use getters and setters
-		self._Name = ''
-		self._Age = 0 # 18
-		self._Gender = '' # Male/Female
+		self.__Name = ''
+		self.__Age = 0 # 18
+		self.__Gender = '' # Male/Female
 		
 		# Normal human attribute is 1 (feeble) to 10 (olympian)
-		self._Strength = 0
+		self.__Strength = 0
 		
-		self._Agility = 0
-		self._Constitution = 0
-		self._AttributePoints = 0
+		self.__Agility = 0
+		self.__Constitution = 0
+		self.__AttributePoints = 0
 		
 		# 1000/level
-		self._XP = 0
+		self.__XP = 0
 		
 		# 1-10 levels
-		self._Level = 0
+		self.__Level = 0
 
 		# Normal human start with 1-100
-		self._HP = 0
-		self._CurrentHP = 0
+		self.__HP = 0
+		self.__CurrentHP = 0
 
-		self._DamageMod = 0
-		self._StrHitMod = 0
-		self._AgilityHitMod = 0
-		self._ACMod = 0
-		self._InitiativeMod = 0
-		self._HPMod = 0
+		self.__DamageMod = 0
+		self.__StrHitMod = 0
+		self.__AgilityHitMod = 0
+		self.__ACMod = 0
+		self.__InitiativeMod = 0
+		self.__HPMod = 0
 
 		# naked 1-100 highest
-		self._AC = 0
+		self.__AC = 0
 		
 		
 	# Private Member Variable Getters & Setters
 	def GetName( self ):
-		return self._Name
+		return self.__Name
 		
 	def SetName( self, Name ):
-		self._Name = Name
+		self.__Name = Name if ( Name != "" ) else "NoName"
 	
 	def GetAge( self ):
-		return self._Age
+		return self.__Age
 		
 	def SetAge( self, Age ):
-		self._Age = Age
+		self.__Age = Age
 	
 	def GetGender( self ):
-		return self._Gender
+		return self.__Gender
 		
 	def SetGender( self, Gender ):
-		self._Gender = Gender
+		# Gender will be one of 4: Male, Female, Not Applicable, Unknown
+		if ( Gender == "Male" or Gender == "Female" or Gender == "Not Applicable" ):
+			self.__Gender = Gender
+		else:
+			self.__Gender = "Unknown"	
 	
 	def GetStrength( self ):
-		return self._Strength
+		return self.__Strength
 		
 	def SetStrength( self, Strength ):
-		self._Strength = Strength
+		self.__Strength = Strength
 	
 	def GetAgility( self ):
-		return self._Agility
+		return self.__Agility
 		
 	def SetAgility( self, Agility ):
-		self._Agility = Agility
+		self.__Agility = Agility
 	
 	def GetConstitution( self ):
-		return self._Constitution
+		return self.__Constitution
 		
 	def SetConstitution( self, Constitution ):
-		self._Constitution = Constitution
+		self.__Constitution = Constitution
 	
 	def GetAttributePoints( self ):
-		return self._AttributePoints
+		return self.__AttributePoints
 		
 	def SetAttributePoints( self, AttributePoints ):
-		self._AttributePoints = AttributePoints
+		self.__AttributePoints = AttributePoints
 
 	def GetXP( self ):
-		return self._XP
+		return self.__XP
 		
 	def SetXP( self, XP ):
-		self._XP = XP
+		self.__XP = XP
 	
 	def GetLevel( self ):
-		return self._Level
+		return self.__Level
 		
 	def SetLevel( self, Level ):
-		self._Level = Level
+		self.__Level = Level
 	
 	def GetHP( self ):
-		return self._HP
+		return self.__HP
 		
 	def SetHP( self, HP ):
-		self._HP = HP
+		self.__HP = HP
 	
 	def GetCurrentHP( self ):
-		return self._CurrentHP
+		return self.__CurrentHP
 		
 	def SetCurrentHP( self, CurrentHP ):
-		self._CurrentHP = CurrentHP
+		self.__CurrentHP = CurrentHP
 	
 	def GetDamageMod( self ):
-		return self._DamageMod
+		return self.__DamageMod
 		
 	def SetDamageMod( self, DamageMod ):
-		self._DamageMod = DamageMod
+		self.__DamageMod = DamageMod
 
 	def GetStrHitMod( self ):
-		return self._StrHitMod
+		return self.__StrHitMod
 		
 	def SetStrHitMod( self, StrHitMod ):
-		self._StrHitMod = StrHitMod
+		self.__StrHitMod = StrHitMod
 
 	def GetAgilityHitMod( self ):
-		return self._AgilityHitMod
+		return self.__AgilityHitMod
 		
 	def SetAgilityHitMod( self, AgilityHitMod ):
-		self._AgilityHitMod = AgilityHitMod
+		self.__AgilityHitMod = AgilityHitMod
 
 	def GetACMod( self ):
-		return self._ACMod
+		return self.__ACMod
 		
 	def SetACMod( self, ACMod ):
-		self._ACMod = ACMod
+		self.__ACMod = ACMod
 
 	def GetInitiativeMod( self ):
-		return self._InitiativeMod
+		return self.__InitiativeMod
 		
 	def SetInitiativeMod( self, InitiativeMod ):
-		self._InitiativeMod = InitiativeMod
+		self.__InitiativeMod = InitiativeMod
 
 	def GetHPMod( self ):
-		return self._HPMod
+		return self.__HPMod
 		
 	def SetHPMod( self, HPMod ):
-		self._HPMod = HPMod
+		self.__HPMod = HPMod
 
 	def GetAC( self ):
-		return self._AC
+		return self.__AC
 		
 	def SetAC( self, AC ):
-		self._AC = AC
+		self.__AC = AC
 
 	# Other methods
 	def GetNewPlayer( self, Name, Gender ):
@@ -231,21 +235,21 @@ class Player():
 		
 	# debugging
 	def ShowPlayerInfo( self ):
-		print ( "Name: ", self.GetName() )
-		print ( "Age: ", self.GetAge() )
-		print ( "Gender: ", self.GetGender() )
-		print ( "Strength: ", self.GetStrength() )
-		print ( "Agility: ", self.GetAgility() )
-		print ( "Constitution: ", self.GetConstitution() )
-		print ( "XP: ", self.GetXP() )
-		print ( "AttributePoints: ", self.GetAttributePoints() )
-		print ( "Level: ", self.GetLevel() )
-		print ( "HP: ", self.GetHP() )
-		print ( "Current HP: ", self.GetCurrentHP() )
-		print ( "DamageMod: ", self.GetDamageMod() )
-		print ( "StrHitMod: ", self.GetStrHitMod() )
-		print ( "AgilityHitMod: ", self.GetAgilityHitMod() )
-		print ( "ACMod: ", self.GetACMod() )
-		print ( "InitiativeMod: ", self.GetInitiativeMod() )
-		print ( "HPMod: ", self.GetHPMod() )
-		print ( "AC: ", self.GetAC() )
+		print( "Name: ", self.GetName() )
+		print( "Age: ", self.GetAge() )
+		print( "Gender: ", self.GetGender() )
+		print( "Strength: ", self.GetStrength() )
+		print( "Agility: ", self.GetAgility() )
+		print( "Constitution: ", self.GetConstitution() )
+		print( "XP: ", self.GetXP() )
+		print( "AttributePoints: ", self.GetAttributePoints() )
+		print( "Level: ", self.GetLevel() )
+		print( "HP: ", self.GetHP() )
+		print( "Current HP: ", self.GetCurrentHP() )
+		print( "DamageMod: ", self.GetDamageMod() )
+		print( "StrHitMod: ", self.GetStrHitMod() )
+		print( "AgilityHitMod: ", self.GetAgilityHitMod() )
+		print( "ACMod: ", self.GetACMod() )
+		print( "InitiativeMod: ", self.GetInitiativeMod() )
+		print( "HPMod: ", self.GetHPMod() )
+		print( "AC: ", self.GetAC() )
