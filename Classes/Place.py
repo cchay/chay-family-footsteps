@@ -1,3 +1,7 @@
+#import sys, os
+#sys.path.append( os.path.join( os.path.dirname( __file__ ), '..', 'Data' ) )
+#import 
+
 class Place:
 	def __init__( self ):
 		self.__ID = 0
@@ -68,6 +72,7 @@ class Town(Place):
 	
 	def Shop( self ):
 		print('Welcome to the General Store!')
+		#
 		
 	
 	def GetInventory( self ):
