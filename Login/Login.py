@@ -19,10 +19,10 @@ def Login():
 		print( 'Wrong Username!!' )
 		return Login()
 	
-	usershell.setUsername( user_data['Username'] )
-	usershell.setPassword( user_data['Password'] )
-	usershell.setFirstName( user_data['FirstName'] )
-	usershell.setLastName( user_data['LastName'] )
+	usershell.setUsername( user_data['_User__Username'] )
+	usershell.setPassword( user_data['_User__Password'] )
+	usershell.setFirstName( user_data['_User__FirstName'] )
+	usershell.setLastName( user_data['_User__LastName'] )
 		
 		
 	password = input( 'Password: ' )
