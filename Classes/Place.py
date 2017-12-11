@@ -5,7 +5,7 @@ class Place:
 		self.__Description = ''
 		self.__Name = ''
 		self.__CanHaveBuildings = False
-		self.__CanGoTo = ''
+		self.__Navigation = ''
 	
 	
 	def GetID( self ):
@@ -48,12 +48,12 @@ class Place:
 		self.__GetCanHaveBuildings = canhavebuildings
 	
 	
-	def GetCanGoTo( self ):
+	def GetNavigation( self ):
 		return self.__CanGoTo
 
 
-	def SetCanGoTo( self, cangoto ):
-		self.__CanGoTo = cangoto
+	def SetNavigation( self, navigation ):
+		self.__Navigation = navigation
 
 
 
