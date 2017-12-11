@@ -51,7 +51,9 @@ def Register():
 	answer = input( 'Are you satisfied with this? ( y / n ): ' )
 	if answer == 'n':
 		return Register()
+		
 	else:
+	
 		if os.path.exists( usershell.writeUserFileName() ) == True:
 			print( 'Username already exsists!' )
 			return Register()
@@ -62,7 +64,6 @@ def Register():
 			
 		else:
 			print( 'Welcome, %s!' % usershell.getUsername() )
-
 	
 	userfilename = usershell.writeUserFileName()
 	userdata = usershell.jsonDefault( usershell )

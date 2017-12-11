@@ -7,15 +7,18 @@ class Place:
 		self.__CanHaveBuildings = False
 		self.__CanGoTo = ''
 	
+	
 	def GetID( self ):
 		return self.__ID
 	
+	
 	def SetID( self, Id ):
-		self.__ID = Id
+		self.__ID = Id	
 	
 	
 	def GetType( self ):
 		return self.__Type
+	
 	
 	def GetType( self, Type ):
 		self.__Type = Type
@@ -24,12 +27,14 @@ class Place:
 	def GetDescription( self ):
 		return self.__Description
 	
+	
 	def GetDescription( self, Id ):
 		self.__ID = Id
 	
 	
 	def GetName( self ):
 		return self.__Name
+	
 	
 	def GetName( self, name ):
 		self.__Name = name
@@ -38,12 +43,14 @@ class Place:
 	def GetCanHaveBuildings( self ):
 		return self.__ID
 	
+	
 	def GetCanHaveBuildings( self, canhavebuildings ):
 		self.__GetCanHaveBuildings = canhavebuildings
 	
 	
 	def GetCanGoTo( self ):
 		return self.__CanGoTo
+
 
 	def SetCanGoTo( self, cangoto ):
 		self.__CanGoTo = cangoto
@@ -61,7 +68,6 @@ class Town(Place):
 	
 	def Shop( self ):
 		print('Welcome to the General Store!')
-		
 		
 	
 	def GetInventory( self ):
