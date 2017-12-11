@@ -53,7 +53,7 @@ Username: {}
 Password: {}
 First Name: {}
 Last Name: {}
-''' .format( self.__Username, self.__Password, self.__FirstName, self.__LastName )#Login().getUsername(), Login().getPassword(), Login().getFirstName(), Login().getLastName())
+''' .format( self.getUsername(), self.getPassword(), self.getFirstName(), self.getLastName())
 		
 		
 	def jsonDefault( self, object ):
