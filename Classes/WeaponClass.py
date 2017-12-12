@@ -65,6 +65,7 @@ class Weapon( Thing ):
       self.SetDamage = 0
       self._HitRollMod = 0
 
+
    def GetSpeed( self ):
       return self._Speed
 
