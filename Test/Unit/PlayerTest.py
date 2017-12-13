@@ -2,7 +2,7 @@ import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Classes'))
 import Player
 
-p = Player.Player().GetNewPlayer( 'Jane', 'Not Applicable' )
+p = Player.Player().GetNewPlayer( 'Jane', '' )
 p.ShowPlayerInfo()
 
 print( "\n" )

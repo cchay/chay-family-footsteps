@@ -217,17 +217,14 @@ class Player():
 			return -30
 		
 
-	def GotHurt( self ):
-		#Todo
-		pass
+	def GotHurt( self, Damage ):
+		self.SetCurrentHP( self.GetCurrentHP() - Damage )
 
-	def GotHealed( self ):
-		#Todo
-		pass
+	def GotHealed( self, BoostHP ):
+		self.SetCurrentHP( self.GetCurrentHP() + BoostHP )
 	
-	def GotExperience( self ):
-		#Todo
-		pass
+	def GotExperience( self, BoostXP ):
+		self.SetXP( self.GetXP() + BoostXP )
 
 	def LeveledUp( self ):
 		#Todo
