@@ -13,11 +13,8 @@ sys.path.append( os.path.join( os.path.dirname( __file__ ), PathToUse, 'Engine')
 import Player
 import Combat
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Engine'))
-import Combat
-
 p1 = Player.Player().GetNewPlayer( 'Jane', 'Female' )
-p1.SetStatus( 'Dead' )
+#p1.SetStatus( 'Dead' )
 p1.ShowPlayerInfo()
 
 p2 = Player.Player().GetNewPlayer( 'Jack', 'Male' )

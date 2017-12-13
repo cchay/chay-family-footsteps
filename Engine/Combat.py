@@ -7,12 +7,14 @@ def ResolveCombat( Creature1, Creature2 ):
 	Round = 1
 	while ( Creature1.CanFight() == True and Creature2.CanFight() == True ):
 		print( "\n Round", Round, "\n Press a button to fight!" )
+		
 		# Resolve Createture1's attack
 		if ( GetHitRoll( Creature1 ) >= Creature2.GetAC() ):
 			Damage = Creature1.GetStrength() + random.randint( 1,10 )
 			Creature2.GotHurt( Damage )
 			print( "\t", Creature1.GetName(), "hits", Creature2.GetName(), "for %i" % Damage )
 		else: print( "\t", Creature1.GetName(), "missed." )
+		
 		# Resolve Createture2's attack
 		if ( GetHitRoll( Creature2 ) >= Creature1.GetAC() ):
 			Damage = Creature2.GetStrength() + random.randint( 1,10 )
@@ -22,7 +24,7 @@ def ResolveCombat( Creature1, Creature2 ):
 		
 		print( "\n", Creature1.GetName() + "'s HP:", Creature1.GetCurrentHP(), "|||", Creature2.GetName() + "'s HP:", Creature2.GetCurrentHP(), "\n" )
 		Round += 1
-		if ( Creature1.GetCurrentHP() <= 0 or Creature2.GetCurrentHP() <= 0 ): break
+		if ( Creature1.CanFight() == False or Creature2.CanFight() == False ): break
 		print( "-" * 50 )
 		#time.sleep( 1 )
 		

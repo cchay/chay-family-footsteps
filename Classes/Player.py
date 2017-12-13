@@ -226,7 +226,7 @@ class Player():
 
 	def GotHurt( self, Damage ):
 		self.SetCurrentHP( self.GetCurrentHP() - Damage )
-		if ( self.GetCurrentHP() <= 0 ): self.SetStatus = 'Dead'
+		if ( self.GetCurrentHP() <= 0 ): self.SetStatus( 'Dead' )
 
 	def GotHealed( self, BoostHP ):
 		self.SetCurrentHP( self.GetCurrentHP() + BoostHP )
