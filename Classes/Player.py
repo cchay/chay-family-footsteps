@@ -7,10 +7,10 @@ class Player():
 		self.__Name = ''
 		self.__Age = 0 # 18
 		self.__Gender = '' # Male/Female
+		self.__Status = '' # Normal, Dead, Poisoned
 		
 		# Normal human attribute is 1 (feeble) to 10 (olympian)
 		self.__Strength = 0
-		
 		self.__Agility = 0
 		self.__Constitution = 0
 		self.__AttributePoints = 0
@@ -58,6 +58,12 @@ class Player():
 			self.__Gender = Gender
 		else:
 			self.__Gender = "Unknown"	
+	
+	def GetStatus( self ):
+		return self.__Status
+		
+	def SetStatus( self, Status ):
+		self.__Status = Status
 	
 	def GetStrength( self ):
 		return self.__Strength
@@ -154,6 +160,7 @@ class Player():
 		self.SetName( Name )
 		self.SetAge( 18 )
 		self.SetGender( Gender )
+		self.SetStatus( 'Normal' )
 		self.SetStrength( self.GenerateAttribute() )
 		self.SetAgility( self.GenerateAttribute() )
 		self.SetConstitution( self.GenerateAttribute() )
@@ -219,6 +226,7 @@ class Player():
 
 	def GotHurt( self, Damage ):
 		self.SetCurrentHP( self.GetCurrentHP() - Damage )
+		if ( self.GetCurrentHP() <= 0 ): self.SetStatus = 'Dead'
 
 	def GotHealed( self, BoostHP ):
 		self.SetCurrentHP( self.GetCurrentHP() + BoostHP )
@@ -229,12 +237,21 @@ class Player():
 	def LeveledUp( self ):
 		#Todo
 		self.SetAttributePoints( self.SetAttributePoints() + 3 )
+
+	def CanFight( self ):
+		ReturnStatus = True
+		if ( self.GetCurrentHP() <= 0 ): ReturnStatus = False
+		if ( self.GetStatus() == 'Dead' ): ReturnStatus = False
+
+		return ReturnStatus
 		
 	# debugging
 	def ShowPlayerInfo( self ):
 		print( "Name: ", self.GetName() )
 		print( "Age: ", self.GetAge() )
 		print( "Gender: ", self.GetGender() )
+		print( "Status: ", self.GetStatus() )
+		print( "CanFight(): ", self.CanFight() )
 		print( "Strength: ", self.GetStrength() )
 		print( "Agility: ", self.GetAgility() )
 		print( "Constitution: ", self.GetConstitution() )
