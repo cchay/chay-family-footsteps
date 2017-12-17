@@ -3,52 +3,58 @@ import os
 
 
 class User:
-	def __init__(self):
-		self.UserName = ''
-		self.Password = ''
-		self.FirstName = ''
-		self.LastName = ''
+	def __init__( self ):
+		self.__Username = ''
+		self.__Password = ''
+		self.__FirstName = ''
+		self.__LastName = ''
 	
 	
-	def getUserName(self):
-		return self.UserName
-		
-	def setUserName(self, name):
-		self.UserName = name
-	
-	
-	def getPassword(self):
-		return self.Password
-		
-	def setPassword(self, password):
-		self.Password = password
-	
-	
-	def getFirstName(self):
-		return self.FirstName
-		
-	def setFirstName(self, name):
-		self.FirstName = name
-	
-	
-	def getLastName(self):
-		return self.LastName
-		
-	def setLastName(self, name):
-		self.LastName = name
+	def getUsername( self ):
+		return self.__Username
 		
 		
-	def writeUserFileName(self):
-		filename = '/home/iceman/_/code/chay-family-footsteps/Data/User/' + self.UserName + '.json'
+	def setUsername( self, name ):
+		self.__Username = name
+	
+	
+	def getPassword( self ):
+		return self.__Password
+		
+		
+	def setPassword( self, password ):
+		self.__Password = password
+	
+	
+	def getFirstName( self ):
+		return self.__FirstName
+		
+		
+	def setFirstName( self, name ):
+		self.__FirstName = name
+	
+	
+	def getLastName( self ):
+		return self.__LastName
+		
+		
+	def setLastName( self, name ):
+		self.__LastName = name
+		
+		
+	def writeUserFileName( self ):
+		filename = self.__Username + '.json'
 		return filename
 	
-	def __str__(self):
+	
+	def __str__( self ):
 		return '''
 Username: {}
 Password: {}
 First Name: {}
 Last Name: {}
-''' .format(self.UserName, self.Password, self.FirstName, self.LastName)#Login().getUserName(), Login().getPassword(), Login().getFirstName(), Login().getLastName())
+''' .format( self.getUsername(), self.getPassword(), self.getFirstName(), self.getLastName())
 		
-	def jsonDefault(self, object):
+		
+	def jsonDefault( self, object ):
 		return object.__dict__
