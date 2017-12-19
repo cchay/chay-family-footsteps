@@ -3,7 +3,9 @@ import json, sys, os
 sys.path.append( os.path.join( os.path.dirname( __file__ ), '..', 'Classes' ) )
 import User
 
-sys.path.append( os.path.join( os.path.dirname( __file__ ), '..', 'Data/User' ) )
+#sys.path.append( os.path.join( os.path.dirname( __file__ ), '..', 'Data', 'User' ) )
+path = os.path.join( os.path.dirname( __file__ ), '..', 'Data', 'User' ) 
+os.chdir( path )
 
 usershell = User.User()
 

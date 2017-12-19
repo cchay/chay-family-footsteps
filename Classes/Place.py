@@ -1,6 +1,8 @@
 #import sys, os
 #sys.path.append( os.path.join( os.path.dirname( __file__ ), '..', 'Data' ) )
-#import 
+import ThingClass
+
+Thing = ThingClass.
 
 class Place:
 	def __init__( self ):
@@ -72,7 +74,8 @@ class Town(Place):
 	
 	def Shop( self ):
 		print('Welcome to the General Store!')
-		#
+		# Thing: ID, Name, Type, Description, Weight, Price
+		return '''ID: %i, Name: %s, Description: %s, Weight: %d, Price: $%d''' % ()
 		
 	
 	def GetInventory( self ):
