@@ -18,12 +18,12 @@ import Combat
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\..', 'Engine'))
 import Combat
 
-p1 = Player.Player().GetNewPlayer( 'Jane', 'Female' )
+p1 = Player.Player().GetNewPlayer( 'Good Ember', 'Female' )
 p1.ShowPlayerInfo()
 
-p2 = Player.Player().GetNewPlayer( 'Jack', 'Male' )
+p2 = Player.Player().GetNewPlayer( 'Evil Ember', 'Female' )
 p2.ShowPlayerInfo()
 
 Combat.ResolveCombat( p1, p2 )
 
-print("The Loser's side of the fight is futile!")
+print('HA HA HA HA HA!!! SHE LOST!!!!!')
