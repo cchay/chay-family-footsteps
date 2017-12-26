@@ -62,9 +62,6 @@ class Place:
 		self.__Navigation = navigation
 
 
-
-
-
 class Town(Place):
 	def __init__( self ):
 #		self.__Type = 'Place'
