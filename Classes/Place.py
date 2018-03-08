@@ -11,7 +11,7 @@ class Place:
 		self.__Description = ''
 		self.__Name = ''
 		self.__CanHaveBuildings = False
-		self.__Navigation = ''
+		self.__Navigation = []
 	
 	
 	def GetID( self ):
@@ -26,7 +26,7 @@ class Place:
 		return self.__Type
 	
 	
-	def GetType( self, Type ):
+	def SetType( self, Type ):
 		self.__Type = Type
 		
 	
@@ -34,32 +34,39 @@ class Place:
 		return self.__Description
 	
 	
-	def GetDescription( self, Id ):
-		self.__ID = Id
+	def SetDescription( self, Description ):
+		self.__Description = Description
 	
 	
 	def GetName( self ):
 		return self.__Name
 	
 	
-	def GetName( self, name ):
-		self.__Name = name
+	def SetName( self, Name ):
+		self.__Name = Name
 	
 	
 	def GetCanHaveBuildings( self ):
-		return self.__ID
+		return self.__CanHaveBuildings
 	
 	
-	def GetCanHaveBuildings( self, canhavebuildings ):
-		self.__GetCanHaveBuildings = canhavebuildings
+	def SetCanHaveBuildings( self, CanHaveBuildings ):
+		self.__CanHaveBuildings = CanHaveBuildings
 	
 	
 	def GetNavigation( self ):
-		return self.__CanGoTo
+		return self.__Navigation
 
 
-	def SetNavigation( self, navigation ):
-		self.__Navigation = navigation
+	def AddNavigation( self, Navigation ):
+		self.__Navigation.append(Navigation)
+	
+	
+	def RemoveNavigation( self, Navigation ):
+		try:
+			self.__Navigation.remove(Navigation)
+		except:
+			print('Navigation you listed is not on the list.')
 
 
 class Town(Place):
