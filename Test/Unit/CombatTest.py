@@ -2,10 +2,10 @@ import sys, os
 
 # Import for Windows
 if os.name == 'nt':
-	PathToUse = '../..'
+	PathToUse = '..\..'
 # Import for Linux
 else:
-	PathToUse = '..\..'
+	PathToUse = '../..'
 
 sys.path.append( os.path.join( os.path.dirname( __file__ ), PathToUse, 'Classes'))
 sys.path.append( os.path.join( os.path.dirname( __file__ ), PathToUse, 'Engine'))
